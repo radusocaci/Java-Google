@@ -1,0 +1,16 @@
+1) Vivado
+2) Eclipse
+3) IntelliJ
+4) aimspice
+5) MySQL Workbench / Server
+6) Visual Studio
+7) Microsoft Office
+8) f.lux
+9) Git
+10) Notepad++
+
+Optional:
+
+1) Active-HDL
+2) Boostnote
+3) Evernote
