@@ -7,9 +7,8 @@ import java.nio.file.StandardOpenOption;
 
 public class InputLargeFIle {
     public static void main(String[] args) {
-        Path filePath = Paths.get("file.txt");
-        try {
-            FileChannel fc = FileChannel.open(filePath, StandardOpenOption.READ);
+        Path filePath = Paths.get("Log.txt");
+        try (FileChannel fc = FileChannel.open(filePath, StandardOpenOption.READ)) {
             ByteBuffer buf = ByteBuffer.allocate(1024);
             int readBytes = fc.read(buf);
 
@@ -17,9 +16,11 @@ public class InputLargeFIle {
                 System.out.println("bytes read: " + readBytes);
 
                 byte[] dst = new byte[readBytes];
+                buf.flip();
+                buf.get(dst);
+
                 System.out.println("buffer: " + new String(dst, "UTF-8"));
 
-                buf.get(dst);
                 buf.clear(); // make buffer ready for writing
                 readBytes = fc.read(buf);
             }
@@ -28,3 +29,4 @@ public class InputLargeFIle {
         }
     }
 }
+

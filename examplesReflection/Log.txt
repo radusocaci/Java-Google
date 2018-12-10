@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-12-06T21:30:11.617817100Z</date>
+  <millis>1544131811617</millis>
+  <nanos>817100</nanos>
+  <sequence>0</sequence>
+  <logger>ByteStream</logger>
+  <level>WARNING</level>
+  <class>ByteStream</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>java.io.FileNotFoundException: in.txt (The system cannot find the file specified)</message>
+</record>
+</log>

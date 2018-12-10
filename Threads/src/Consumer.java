@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 
 public class Consumer {
+
     private LinkedList<String> list;
 
     public Consumer(LinkedList<String> list) {
@@ -10,22 +11,24 @@ public class Consumer {
     public void consume() {
         Thread t = new Thread() {
             @Override
-            public void start() {
+            public void run() {
                 while (true) {
                     try {
                         synchronized (list) {
-                            System.out.println("Consumed" + list.poll());
-                            System.out.println(list);
+                            /*while (list.isEmpty()) {
+                                list.wait();
+                            }*/
+                            System.out.println("consumed " + list.poll());
+                            System.out.println("list content " + list);
                         }
-
-                        Thread.sleep(100);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        // TODO: 17/07/2018 handle error
                     }
                 }
             }
-        };
 
+        };
         t.setDaemon(true);
         t.start();
     }
