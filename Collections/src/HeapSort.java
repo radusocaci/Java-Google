@@ -2,11 +2,11 @@ import java.util.*;
 
 public class HeapSort {
     private static <E> List<E> heapSort(Collection<E> toSort) {
-        Queue<E> priorityQueue = new PriorityQueue<E>(toSort);
-        List<E> resultList = new ArrayList<E>();
+        Queue<E> priorityQueue = new PriorityQueue<>(toSort);
+        List<E> resultList = new ArrayList<>();
 
         while(!priorityQueue.isEmpty()) {
-            resultList.add(priorityQueue.remove());
+            resultList.add(priorityQueue.poll());
         }
 
         return resultList;

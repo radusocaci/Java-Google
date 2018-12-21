@@ -39,7 +39,7 @@ public class Person implements Comparable<Person> {
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
         return age == person.age &&
-                Objects.equals(name, person.name);
+                name.equals(person.name);
     }
 
     @Override
@@ -47,12 +47,11 @@ public class Person implements Comparable<Person> {
         return Objects.hash(name, age);
     }
 
-
     @Override
     public int compareTo(Person o) {
-        if(this.age > o.age) {
+        if (this.age > o.age) {
             return -1;
-        } else if(this.age < o.age) {
+        } else if (this.age < o.age) {
             return 1;
         } else {
             return 0;

@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class Generics {
     public static void main(String[] args) {
-        ArrayList<Integer> intList = new ArrayList<Integer>();
+        ArrayList<Integer> intList = new ArrayList<>();
         intList.add(1);
         intList.add(2);
         // intList.add("what"); - compiler does not allow this
